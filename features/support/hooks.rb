@@ -5,8 +5,9 @@ require 'rspec'
 require 'thor'
 
 $domain = "http://zenprmalpha.ahealthtech.com/"
+
 Before do
-  @browser = Selenium::WebDriver.for :firefox
+  @browser = Selenium::WebDriver.for :chrome
   @browser.manage.window.maximize
 end
 
