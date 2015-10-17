@@ -1,0 +1,33 @@
+require 'selenium-webdriver'
+require 'page-object'
+require 'cucumber'
+require 'rspec'
+require 'thor'
+
+caps = Selenium::WebDriver::Remote::Capabilities.internet_explorer
+caps.version = "11"
+$version = "11"
+caps.platform = 'Windows 10'
+caps["selenium-version"]= "2.48.0"
+caps["screen-resolution"]= "1280x1024"
+caps[:name] = "Running tests in IE11 and on Windows 10"
+
+driver = Selenium::WebDriver.for(
+  :remote,
+  :url => "http://richdownie:ff09c619-feab-4476-a519-936174ef6f2c@ondemand.saucelabs.com:80/wd/hub",
+  :desired_capabilities => caps)
+
+$domain = "http://zenprmalpha.ahealthtech.com/"
+
+Before do
+  @browser = driver
+end
+
+After do 
+  @browser.manage.delete_all_cookies()
+end
+
+at_exit do	
+  driver.quit
+end
+
