@@ -11,12 +11,12 @@ Scenario: As a provider I want to login so I can respond to a project request
   And I am on the projects page
   Then I should see exisiting projects
   
-# Scenario: As a provider I want to retrieve my password so I can login
+Scenario: As a provider I want to retrieve my password so I can login
 # Do you want this Scenario to visit http://zenprmalpha.ahealthtech.com//#/forgotpassword and Request a new password?
 # If you want a full end-to-end test we can maybe set up a Provider with an Gmail address
 # I can use the GMAIL Rubygem https://rubygems.org/gems/gmail/versions/0.6.0 to click through the Reset Password Flow
   
-# Scenario: As a provider I want to retrieve my username so I can login
+Scenario: As a provider I want to retrieve my username so I can login
 # I do not see a "Request Username" link anywhere
   
 Scenario: Login as an Invalid User
