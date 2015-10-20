@@ -1,7 +1,17 @@
 Feature: Login Process Feature
 
+Scenario Outline: As a Customer or Provider I want to logout so that I can safely move on with my life
+  Given I login with <username> and <password>
+  When I logout
+  Then I should be on the "/#/login" page
+Examples:
+  | user_type  | username     | password   | landing_page |
+  | "Customer" | "Bronx"      | "password" | "dashboard" |
+  | "Provider" | "1588654511" | "password" | "dashboard" |
+
+  
 Scenario: As a provider I want to logout so that I can safely move on with my life
-  Given I login with "Bronx" and "password"
+  Given I login with "1588654511" and "password"
   When I logout
   Then I should be on the "/#/login" page
   

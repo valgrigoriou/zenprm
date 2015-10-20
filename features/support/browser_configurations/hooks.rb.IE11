@@ -3,6 +3,7 @@ require 'page-object'
 require 'cucumber'
 require 'rspec'
 require 'thor'
+require 'pry'
 
 caps = Selenium::WebDriver::Remote::Capabilities.internet_explorer
 caps.version = "11"

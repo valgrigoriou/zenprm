@@ -3,6 +3,7 @@ require 'page-object'
 require 'cucumber'
 require 'rspec'
 require 'thor'
+require 'pry'
 
 $domain = "http://zenprmalpha.ahealthtech.com/"
 
