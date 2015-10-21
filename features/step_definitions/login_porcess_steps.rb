@@ -22,10 +22,6 @@ Given /I login with "(.*)" and "(.*)"/i do |username, password|
 end
 
 Given /I logout/i do
-  # binding.pry
-  Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.find_element(:link, 'Bronx-Lebanon Hospital Center')}
-  puts @browser.find_element(css: ".growl-container div").attribute('class').should include "alert-success"
-  @browser.first(:class, 'close').click unless @browser.first(:class, 'close').displayed? == false
   @browser.first(:class, 'fa-user').click
   Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.find_element(:class, 'fa-sign-out')}
   @browser.first(:class, 'fa-sign-out').click

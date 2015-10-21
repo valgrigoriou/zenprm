@@ -17,3 +17,9 @@ Given /I should (NOT )?see "(.*)" on the page/i do |visibility, text|
     @browser.find_element(:tag_name => "body").text.should include("#{text}")
   end
 end
+
+Given /I should see "(.*)" for the alert message/i do |alert_style|
+  Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.first(:class, 'close')}
+  @browser.find_element(css: ".growl-container div").attribute('class').should include alert_style
+  @browser.first(:class, 'close').click unless @browser.first(:class, 'close').displayed? == false  
+end
