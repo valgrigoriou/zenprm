@@ -22,10 +22,29 @@ GEM
       i18n (~> 0.5)
     ffi (1.9.10)
     gherkin3 (3.1.2)
+    gmail (0.6.0)
+      gmail_xoauth (>= 0.3.0)
+      mail (>= 2.2.1)
+    gmail_xoauth (0.4.1)
+      oauth (>= 0.3.6)
+    hipchat (1.5.2)
+      httparty
+      mimemagic
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
+    json (1.8.3)
+    mail (2.6.3)
+      mime-types (>= 1.16, < 3)
     method_source (0.8.2)
+    mime-types (2.6.2)
+    mimemagic (0.3.0)
     multi_json (1.11.2)
     multi_test (0.1.2)
+    multi_xml (0.5.5)
+    net-ssh (3.0.1)
+    oauth (0.4.7)
     page-object (1.1.0)
       page_navigation (>= 0.9)
       selenium-webdriver (>= 2.44.0)
@@ -67,6 +86,10 @@ PLATFORMS
 
 DEPENDENCIES
   cucumber
+  gmail
+  hipchat
+  httparty
+  net-ssh
   page-object
   pry
   rspec
