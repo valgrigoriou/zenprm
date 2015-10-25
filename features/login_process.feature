@@ -17,9 +17,14 @@ Scenario: As a Provider I want to retrieve my password so I can login
   And I submit the following email "zenprm44@gmail.com"
   And I should see "alert-success" for the alert message
   Then I verify email was sent
+
+Scenario: As a Provider I want to return to login from forgot password page
+  Given I am on the forgot password page
+  And I return to login
+  Then I should be on the "/#/login" page
   
 Scenario: As a provider I want to retrieve my username so I can login
-# I do not see a "Request Username" link anywhere
+  Given I am on the forgot username page
   
 Scenario: Login as an Invalid Provider
   Given I login with "Invalid" and "password"
