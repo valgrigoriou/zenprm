@@ -19,12 +19,12 @@ Given /I login with "(.*)" and "(.*)"/i do |username, password|
   @page.username=(username)
   @page.password=(password)
   @page.login_button.submit
+  sleep 1
 end
 
 Given /I return to login/i do
   @browser.first(:link,'Return to Login').click
 end
-
 
 Given /I logout/i do
   Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.find_element(:id, 'Profile')}
