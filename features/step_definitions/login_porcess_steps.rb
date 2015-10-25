@@ -22,7 +22,8 @@ Given /I login with "(.*)" and "(.*)"/i do |username, password|
 end
 
 Given /I logout/i do
-  @browser.first(:class, 'fa-user').click
+  Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.find_element(:id, 'Profile')}
+  @browser.first(:id, 'Profile').click
   Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.find_element(:class, 'fa-sign-out')}
   @browser.first(:class, 'fa-sign-out').click
 end

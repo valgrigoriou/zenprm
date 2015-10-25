@@ -2,14 +2,12 @@ Feature: Login Process Feature
 
 Scenario: As a Customer (Administrator) I want to login so I can manage the system
   Given I login with "Bronx" and "password"
-  And I should see "alert-success" for the alert message
   Then I should be on the "/#/" page
   When I logout
   Then I should be on the "/#/login" page
   
 Scenario: As a Provider I want to login so I can respond to a project request
   Given I login with "1588654511" and "password"
-  And I should see "alert-success" for the alert message
   Then I should be on the "/#/profile" page
   When I logout
   Then I should be on the "/#/login" page
