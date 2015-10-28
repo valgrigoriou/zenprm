@@ -5,3 +5,7 @@ Scenario: As a provider I want to update my profile so that I am accurately targ
   And I update the profile page
   Then I should see "Sweet! It worked!!!." on the page
   And I should see "alert-success" for the alert message
+  
+# Scenario: As a provider I want to create multiple email addresses on my profile so that I can work with multiple organizations
+#   Given I login with "Bronx" and "password"
+#   And I add a new email address

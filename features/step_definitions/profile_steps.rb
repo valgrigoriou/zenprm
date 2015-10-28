@@ -18,6 +18,18 @@ class Profile
   def save
     @browser.first(:class, 'fa-floppy-o')
   end
+  
+  def manage_emails
+    @browser.first(:class, 'fa-envelope-o')
+  end
+  
+  def email_address
+    @browser.find_element(:name, 'EmailForm').first(:class, 'ng-valid-email')
+  end
+  
+  def add_email_button
+    @browser.find_element(:name, 'EmailForm').find_element(:class, 'fa-plus')
+  end
 end
 
 Given /I update the profile page/i do
@@ -31,5 +43,21 @@ Given /I update the profile page/i do
   sleep 2
   @page.dba=("Bronx-Lebanon " + Time.now.strftime("%m_%d_%Y_%H_%M_%S"))
   @page.save.click
+end
+
+Given /I add a new email address/i do
+  @page = Profile.new(@browser)
+  Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.find_element(:id, 'Profile')}
+  @browser.first(:id, 'Profile').click
+  sleep 1
+  @browser.first(:link, 'Profile').click
+  sleep 1
+  @page.edit.click
+  @page.manage_emails.click
+  @page.email_address.send_keys("zenprm44@gmail.com")
+  sleep 1
+  @page.add_email_button.click
+  sleep 1
+  @browser.all(:class, 'fa-times').last.click
 end
 
