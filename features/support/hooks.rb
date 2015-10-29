@@ -1,15 +1,6 @@
-require 'selenium-webdriver'
-require 'page-object'
-require 'cucumber'
-require 'rspec'
-require 'thor'
-require 'pry'
-
-$domain = "http://zenprmalpha.ahealthtech.com/"
-
 Before do
-  @browser = Selenium::WebDriver.for :chrome
-  @browser.manage.window.maximize
+  @profile = Profile.new(@browser)
+  @login = Login.new(@browser)
 end
 
 AfterStep do
@@ -19,8 +10,4 @@ AfterStep do
   # elsif @browser.manage.logs.get("browser") != []
   #   raise "BOOM ~ found something in the Browser JS Console ~ #{@browser.manage.logs.get("browser")}"
   # end
-end
-
-After do
-  @browser.close
 end

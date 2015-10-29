@@ -5,7 +5,7 @@ class Set < Thor
   
   no_tasks do
     def copy_environment(new_environment)
-      run("cp features/support/browser_configurations/hooks.rb.#{new_environment} features/support/hooks.rb")
+      run("cp features/support/browser_configurations/env.rb.#{new_environment} features/support/env.rb")
     end
   end
   
