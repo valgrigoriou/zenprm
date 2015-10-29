@@ -5,6 +5,7 @@ class Profile
   text_field(:primaryaddress2, :id => "primaryaddress2")
   text_field(:organizationName, :id => "organizationName")
   text_field(:dba, :id => "DBA")
+  text_field(:fax_number, :id => "faxNumber")
   
   def visit
     @browser.get($domain + "//#/profile")
@@ -41,7 +42,7 @@ Given /I update the profile page/i do
   sleep 1
   @page.edit.click
   sleep 2
-  @page.dba=("Bronx-Lebanon " + Time.now.strftime("%m_%d_%Y_%H_%M_%S"))
+  @page.fax_number=(Time.now.strftime("%m_%d_%Y_%H_%M_%S"))
   @page.save.click
 end
 
@@ -58,6 +59,6 @@ Given /I add a new email address/i do
   sleep 1
   @page.add_email_button.click
   sleep 1
-  @browser.all(:class, 'fa-times').last.click
+  puts @browser.all(:class, 'fa-times').last.click
 end
 
