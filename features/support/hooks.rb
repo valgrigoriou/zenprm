@@ -1,6 +1,7 @@
 Before do
   @profile = Profile.new(@browser)
   @login = Login.new(@browser)
+  @sidebar = SideBar.new(@browser)
 end
 
 AfterStep do

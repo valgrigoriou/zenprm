@@ -1,4 +1,4 @@
-Feature: Login Process Feature
+Feature: Customer Login Process Feature
 
 Scenario: As a Customer (Administrator) I want to login so I can manage the system
    Given I login with "Bronx" and "password"

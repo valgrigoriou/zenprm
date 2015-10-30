@@ -11,10 +11,7 @@ Given /I return to login/i do
 end
 
 Given /I logout/i do
-  Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.find_element(:id, 'Profile')}
-  @browser.first(:id, 'Profile').click
-  Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.find_element(:class, 'fa-sign-out')}
-  @browser.first(:class, 'fa-sign-out').click
-  Selenium::WebDriver::Wait.new(:timeout => 10).until {@browser.find_element(:class, 'fa-sign-in')}
+  @sidebar.profile_button.click
+  @sidebar.sign_out_link.click
 end
   
