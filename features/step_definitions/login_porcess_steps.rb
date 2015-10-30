@@ -15,6 +15,6 @@ Given /I logout/i do
   @browser.first(:id, 'Profile').click
   Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.find_element(:class, 'fa-sign-out')}
   @browser.first(:class, 'fa-sign-out').click
-  Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.find_element(:class, 'fa-sign-in')}
+  Selenium::WebDriver::Wait.new(:timeout => 10).until {@browser.find_element(:class, 'fa-sign-in')}
 end
   
