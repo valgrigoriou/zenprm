@@ -6,10 +6,6 @@ Given /I login with "(.*)" and "(.*)"/i do |username, password|
   sleep 1
 end
 
-Given /I return to login/i do
-  @browser.first(:link,'Return to Login').click
-end
-
 Given /I logout/i do
   @sidebar.profile_button.click
   @sidebar.sign_out_link.click

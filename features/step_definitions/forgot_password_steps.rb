@@ -1,21 +1,14 @@
-class ForgotPassword
-  include PageObject
-  
-  text_field(:forgot_password_email, :id => "forgotPasswordEmail")
-  
-  def visit_page
-    @browser.get($domain + "/#/forgotpassword")
-  end
-end
-
 Given /I am on the forgot password page/i do
-  @page = ForgotPassword.new(@browser)
-  @page.visit_page
+  @forgot_password.visit_page
 end
 
 Given /I submit the following email "(.*)"/i do |email|
-  @page.forgot_password_email=(email)
-  @browser.find_element(name: 'changePasswordForm').submit
+  @forgot_password.forgot_password_email=(email)
+  @forgot_password.submit
+end
+
+Given /I return to login/i do
+  @forgot_password.return_to_login.click
 end
 
 # Given /I verify email was sent/i do

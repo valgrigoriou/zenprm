@@ -1,5 +1,3 @@
-
-
 Given /I view the projects tab/i do
   @profile.projects_tab.click
 end
