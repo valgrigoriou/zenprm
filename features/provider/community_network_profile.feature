@@ -3,7 +3,7 @@ Feature: Community Network Profile
 Scenario: As a provider I want to update my profile so that I am accurately targeted for projects
   Given I login with "1588654511" and "password"
   And I view the projects tab
-  Then I should see "Archived Projects" on the page
+  Then I should see "ARCHIVED PROJECTS" on the page
   
 Scenario: As a provider I want to view my profile so that I can review my information
   Given I login with "1588654511" and "password"

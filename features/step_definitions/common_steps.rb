@@ -1,10 +1,9 @@
 Given /I should (NOT )?be on the "(.*)" page/ do |visibility, value|
-  sleep 1
   url = @browser.current_url.to_s
   if (visibility.to_s.strip == 'NOT') then
      url.should_not include value
   else
-    Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.current_url.to_s.should include value}
+    Selenium::WebDriver::Wait.new(:timeout => 15).until {@browser.current_url.to_s.should include value}
   end
 end
 
