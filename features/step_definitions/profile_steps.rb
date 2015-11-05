@@ -12,19 +12,25 @@ Given /I update the profile page/i do
   @profile.save.click
 end
 
-# Given /I add a new email address/i do
-#   @page = Profile.new(@browser)
-#   Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.find_element(:id, 'Profile')}
-#   @browser.first(:id, 'Profile').click
-#   sleep 1
-#   @browser.first(:link, 'Profile').click
-#   sleep 1
-#   @page.edit.click
-#   @page.manage_emails.click
-#   @page.email_address.send_keys("zenprm44@gmail.com")
-#   sleep 1
-#   @page.add_email_button.click
-#   sleep 1
-#   puts @browser.all(:class, 'fa-times').last.click
-# end
+Given /I add a new email address/i do
+  random = rand(999999999).to_s
+  @page = Profile.new(@browser)
+  Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.find_element(:id, 'Profile')}
+  @browser.first(:id, 'Profile').click
+  sleep 1
+  @browser.first(:link, 'Profile').click
+  sleep 1
+  @page.edit.click
+  @page.manage_emails.click
+  @page.email_address.send_keys("zenprm#{random}@gmail.com")
+  sleep 1
+  @page.add_email_button.click
+  sleep 1
+  steps %Q{ * I should see "zenprm#{random}@gmail.com" on the page}
+  email_count = @browser.all(:class, 'fa-times').count
+  # if email_count == 2
+  #   puts @browser.all(:class, 'fa-check-square-o').last.click
+  #   @browser.switch_to.alert.accept
+  # end
+end
 

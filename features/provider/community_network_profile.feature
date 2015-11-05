@@ -21,9 +21,9 @@ Scenario: As a provider I want to be able to change my email preferences so that
   Given I login with "1588654511" and "password"
   Then I should be on the "/#/profile" page
   
-# Scenario: As a provider I want to create multiple email addresses on my profile so that I can work with multiple organizations
-#   Given I login with "1588654511" and "password"
-#   And I add a new email address
+Scenario: As a provider I want to create multiple email addresses on my profile so that I can work with multiple organizations
+  Given I login with "1588654511" and "password"
+  And I add a new email address
   
 # Scenario: As a provider I want to view my profile so that I can review and fulfill open projects / requirements
 # Scenario: As a provider I want to view my profile so that I can reference past projects
