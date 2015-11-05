@@ -5,7 +5,7 @@ Scenario: As a Provider I want to login so I can respond to a project request
   Then I should be on the "/#/profile" page
   And I view my existing projects
   Then I should see "OPEN PROJECTS" on the page
-  And I should see "ARCHIVED PROJECTS" on the page
+  And I should see "Archived Projects" on the page
   When I logout
   Then I should be on the "/#/login" page
 

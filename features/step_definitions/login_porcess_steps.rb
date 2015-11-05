@@ -9,7 +9,7 @@ Given /I login with "(.*)" and "(.*)"/i do |username, password|
 end
 
 Given /I logout/i do
-  @sidebar.profile_button.click
+  @sidebar.settings_button.click
   @sidebar.sign_out_link.click
   Selenium::WebDriver::Wait.new(:timeout => 15).until {@browser.first(:class, 'fa-sign-in').displayed? == true}
   sleep 1

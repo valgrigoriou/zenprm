@@ -4,6 +4,7 @@ Before do
   @sidebar = SideBar.new(@browser)
   @project = Project.new(@browser)
   @forgot_password = ForgotPassword.new(@browser)
+  @edit_email = EditEmail.new(@browser)
 end
 
 AfterStep do

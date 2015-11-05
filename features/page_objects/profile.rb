@@ -26,6 +26,7 @@ class Profile
   end
   
   def manage_emails
+    Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.find_element(:class, 'fa-envelope-o')}
     @browser.first(:class, 'fa-envelope-o')
   end
   

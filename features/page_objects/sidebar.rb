@@ -1,7 +1,12 @@
 class SideBar
   include PageObject
   
-  def profile_button
+  def settings_button
+    Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.find_element(:id, 'Settings')}
+    @browser.first(:id, 'Settings')
+  end
+  
+  def profile_link
     Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.find_element(:id, 'Profile')}
     @browser.first(:id, 'Profile')
   end
