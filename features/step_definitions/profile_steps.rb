@@ -17,7 +17,7 @@ Given /I add a new email address/i do
   @page = Profile.new(@browser)
   Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.find_element(:id, 'Profile')}
   @browser.first(:id, 'Profile').click
-  sleep 1
+  Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.find_element(:link, 'Profile')}
   @browser.first(:link, 'Profile').click
   sleep 1
   @page.edit.click
@@ -26,11 +26,11 @@ Given /I add a new email address/i do
   sleep 1
   @page.add_email_button.click
   sleep 1
-  steps %Q{ * I should see "zenprm#{random}@gmail.com" on the page}
+  # steps %Q{ * I should see "zenprm#{random}@gmail.com" on the page}
   email_count = @browser.all(:class, 'fa-times').count
-  # if email_count == 2
-  #   puts @browser.all(:class, 'fa-check-square-o').last.click
-  #   @browser.switch_to.alert.accept
-  # end
+  if email_count > 2
+    puts @browser.all(:class, 'fa-times').last.click
+    @browser.switch_to.alert.accept
+  end
 end
 
