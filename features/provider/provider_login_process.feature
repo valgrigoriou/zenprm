@@ -4,7 +4,7 @@ Scenario: As a Provider I want to login so I can respond to a project request
   Given I login with "1588654511" and "password"
   Then I should be on the "/#/profile" page
   And I view my existing projects
-  Then I should see "OPEN PROJECTS" on the page
+  Then I should see "Open Projects" on the page
   And I should see "Archived Projects" on the page
   When I logout
   Then I should be on the "/#/login" page
