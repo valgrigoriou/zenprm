@@ -8,5 +8,12 @@ Before do
 end
 
 AfterStep do
-  # raise "BOOM ~ found something in the Browser JS Console ~ #{@browser.manage.logs.get("browser")}"
+  if @browser.manage.logs.get("browser").inspect =~ /WARNING/
+    puts @browser.manage.logs.get("browser").inspect 
+    #go to the next step
+  elsif @browser.manage.logs.get("browser") == []
+    #go to the next step
+  else
+    raise "BOOM ~ found something in the Browser JS Console ~ #{@browser.manage.logs.get("browser")}"
+  end
 end
