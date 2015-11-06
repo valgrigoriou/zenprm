@@ -9,6 +9,6 @@ end
 Given /I logout/i do
   @sidebar.settings_button.click
   @sidebar.sign_out_link.click
-  sleep 1
+  sleep 2
 end
   

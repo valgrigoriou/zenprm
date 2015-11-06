@@ -3,12 +3,10 @@ Given /I view the projects tab/i do
 end
 
 Given /I update the profile page/i do
-  sleep 3
+  @sidebar.settings_button.click
+  @sidebar.profile_link.click
   @profile.edit.click
-  sleep 1
-  @profile.fax_number=("")
-  sleep 2
-  @profile.fax_number=(Time.now.strftime("%m_%d_%Y_%H_%M_%S"))
+  @profile.fax_number("#{rand(999999999)}")
   @profile.save.click
 end
 

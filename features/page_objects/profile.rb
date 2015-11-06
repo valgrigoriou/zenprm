@@ -5,10 +5,16 @@ class Profile
   text_field(:primaryaddress2, :id => "primaryaddress2")
   text_field(:organizationName, :id => "organizationName")
   text_field(:dba, :id => "DBA")
-  text_field(:fax_number, :id => "faxNumber")
   
   def visit
     @browser.get($domain + "//#/profile")
+  end
+  
+  def fax_number(value)
+    Selenium::WebDriver::Wait.new(:timeout => 5).until {@browser.find_element(:name, 'ProviderProfileForm').find_element(:id, 'faxNumber')}
+    sleep 5
+    @browser.find_element(:name, 'ProviderProfileForm').find_element(:id, 'faxNumber').clear
+    @browser.find_element(:name, 'ProviderProfileForm').find_element(:id, 'faxNumber').send_keys(value)
   end
   
   def projects_tab
