@@ -25,3 +25,13 @@ Given /I add a new email address/i do
   end
 end
 
+Given /I verify the basic profile page panels/i do
+  @profile.card
+  @profile.card_body
+  @profile.completeness
+  @profile.addresses
+  @profile.additional_information
+end
+
+
+

@@ -6,6 +6,9 @@ class Login
   
   def visit_page
     @browser.get($domain + "/#/login")
+    cookies = @browser.manage.all_cookies
+    raise "Missing ASP.NET_SessionId cookie" unless cookies.first[:name] == "ASP.NET_SessionId"
+    raise "Missing Logo on the Login Page" unless @browser.first(css: 'img').attribute(:src) == "http://zenprmalpha.ahealthtech.com//assets/img/template/logo.png"
   end
   
   def login_button
