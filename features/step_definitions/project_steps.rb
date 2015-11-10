@@ -10,3 +10,7 @@ Given /I open the first project/i do
   @project.visit_first_project
 end
 
+Given /I am on the projects page/i do
+  @profile.projects_tab.click
+end
+
